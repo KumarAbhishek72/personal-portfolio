@@ -1,0 +1,14 @@
+# Node modules
+node_modules/
+# Build output
+dist/
+# Mac system files
+.DS_Store
+# Logs
+*.log
+# Env files
+.env
+# VS Code settings
+.vscode/
+# Asset cache
+assets/pics/*.tmp

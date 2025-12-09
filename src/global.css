@@ -742,8 +742,7 @@
   .stat-card {
     @apply rounded-xl bg-white/25 p-6 text-(--gradient-love) shadow-lg backdrop-blur-sm transition-transform duration-300 hover:scale-105 dark:bg-gray-800/30;
   }
-
-  /* Fix: Ensure Tailwind @apply works + add missing base styles */
+  
   .stat-number {
     @apply bg-clip-text text-[4rem] font-black text-transparent drop-shadow-[0_0_12px_oklch(0.85_0.12_280_/_0.4)] transition-all duration-400;
     background-image: var(--gradient-neon);
@@ -1030,19 +1029,12 @@
     @apply dark:hover:bg-[color-mix(in_oklab,var(--color-brand-secondary)_12%,transparent)];
   }
 
-  /* ——— Icons & Decor ——— */
+  /* ——— Icons——— */
   .icon {
     @apply mb-6 inline-flex size-12 items-center justify-center rounded-xl bg-[linear-gradient(to_br,orange-100,orange-300)] text-2xl dark:bg-[linear-gradient(to_br,orange-900,orange-700)];
   }
 
   .group:hover .icon {
     @apply scale-150 transition-transform duration-700;
-  }
-  .decor {
-    @apply pointer-events-none absolute rounded-full border opacity-60 blur-sm;
-  }
-
-  .divider {
-    @apply mt-6 h-[1px] w-3/4 bg-[linear-gradient(to_right,sky-400,fuchsia-400,transparent)] opacity-60;
   }
 }
