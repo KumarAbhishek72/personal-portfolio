@@ -1,4 +1,15 @@
 {
+  "name": "personal-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal portfolio - static HTML + Tailwind v4",
+  "scripts": {
+    "build": "npx tailwindcss -i ./src/global.css -o ./dist/output.css --minify",
+    "build": "mkdir -p dist && cp ./src/index.html ./dist/index.html && cp -R ./src/assets ./dist/ || true",
+    "build": "npm run build && npm run build",
+    "start": "npm run build && npx serve dist",
+    "clean-dist": "rm -rf dist || true"
+  },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.17",
     "framer-motion": "^12.23.24",
