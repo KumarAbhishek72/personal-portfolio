@@ -4,7 +4,7 @@
   "private": true,
   "description": "Personal portfolio - static HTML + Tailwind v4",
   "scripts": {
-    "build": "tailwindcss -i ./src/global.css -o ./dist/output.css"
+    "build": "tailwindcss -i ./global.css -o ./dist/output.css"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.17",
