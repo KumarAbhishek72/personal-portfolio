@@ -1,0 +1,1127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description" content="Abhishek Kumar — Full Stack Developer crafting sleek, scalable, and emotionally intelligent web experiences." />
+    <meta property="og:title" content="Abhishek Kumar | Full Stack Developer" />
+    <meta property="og:image" content="/assets/meta-preview.jpg" />
+    <meta property="og:description" content="Building modern web experiences with design, performance, and purpose." />
+    <meta name="theme-color" content="#6E56CF" />
+    <link rel="icon" href="/favicon.svg" />
+
+    <title>Abhishek Kumar | Full Stack Developer</title>
+    <link href="./dist/output.css" rel="stylesheet" />
+  </head>
+
+  <body class="antialiased">
+    <!-- 🌐 Header -->
+    <header class="animate-fade-in sticky top-4 z-50 container mx-auto p-8 lg:p-10">
+      <div class="flex items-center justify-between rounded-xl border border-border-light bg-glass-light px-5 py-4 shadow-soft backdrop-blur-md dark:border-border-dark dark:bg-glass-dark">
+        <div class="flex items-center gap-3">
+          <img src="https://images-public.x.ai/xai-images-public/imagine/images/c2f12baa-85ca-4a41-af86-199dbf65ed3f.png?cache=1" alt="Logo" class="size-12 rounded-full" loading="lazy" />
+          <h1 class="text-gradient text-gradient-neon font-moon text-3xl">Abhishek Kumar</h1>
+        </div>
+
+        <nav class="hidden md:block">
+          <ul class="flex items-center gap-5 text-sm font-medium">
+            <li><a href="#about" class="nav-item">About</a></li>
+            <li><a href="#skills" class="nav-item">Skills</a></li>
+            <li><a href="#projects" class="nav-item">Projects</a></li>
+            <li><a href="#experience" class="nav-item">Experience</a></li>
+            <li>
+              <button
+                id="darkToggle"
+                class="flex size-10 items-center justify-center rounded-full border border-border-light transition hover:bg-surface-light dark:border-border-dark dark:hover:bg-surface-dark"
+              >
+                <i id="themeIcon" class="fa-solid fa-moon text-base"></i>
+              </button>
+            </li>
+
+            <li>
+              <a href="#contact" class="hover-glow rounded-full bg-brand-warm px-4 py-2 font-semibold text-gray-900"> Contact </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="overflow-hidden">
+      <div class="reveal-zoom relative isolate w-full px-6 pt-6 md:pt-22 lg:px-20">
+        <!-- 💠 Decorative Lines -->
+        <svg class="absolute inset-0 -z-5 opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+          <defs>
+            <linearGradient id="circuit" gradientTransform="rotate(45)">
+              <stop offset="0%" stop-color="#60a5fa" />
+              <stop offset="100%" stop-color="#a78bfa" />
+            </linearGradient>
+          </defs>
+          <path d="M0,400 C200,300 600,500 800,400" stroke="url(#circuit)" stroke-width="2.5" fill="none" class="animate-pulse-slow" />
+          <path d="M0,200 C250,100 550,300 800,200" stroke="url(#circuit)" stroke-width="2" fill="none" class="animate-pulse-slow-delayed" />
+        </svg>
+      </div>
+
+      <!-- 🦸 Hero Section -->
+      <section id="hero" class="reveal-zoom container mx-auto grid grid-cols-1 items-center gap-10 px-6 py-16 md:grid-cols-2 lg:px-20 lg:py-24">
+        <div class="animate-fade-up flex flex-col gap-4">
+          <p class="text-sm text-gray-500 dark:text-gray-400">Hey, I'm</p>
+          <h1 class="text-gradient text-gradient-brand overflow-visible text-start font-moon text-5xl font-bold tracking-tight md:text-6xl">Abhishek Kumar</h1>
+          <h3 class="text-xl font-semibold text-text-subtle-light dark:text-text-subtle-dark">Full Stack Web Developer</h3>
+          <p class="mt-3 max-w-md">
+            I build high-performance web apps for startups — combining strong engineering with premium motion design. Specializing in <span class="font-semibold text-brand-secondary">Next.js</span>,
+            Node.js & Tailwind for fast, scalable digital products.
+          </p>
+
+          <!-- 🔥 Focused CTA -->
+          <div class="mt-6 flex gap-3 text-sm">
+            <a href="#contact" class="hover-glow rounded-md bg-brand-primary px-6 py-2.5 text-center font-medium text-white"> Hire Me → </a>
+            <a href="#projects" class="rounded-md border border-border-light px-6 py-2.5 transition hover:bg-surface-light dark:border-border-dark dark:hover:bg-surface-dark"> View Projects </a>
+          </div>
+
+          <!-- 💬 Small proof so it doesn’t feel hype -->
+          <p class="mt-3 text-xs">6+ delivered projects · 3+ years building in production · Motion-led UX</p>
+        </div>
+
+        <div class="animate-slide-in flex rotate-3 transform items-center justify-center shadow-xl">
+          <img
+            src="/assets/hero.jpg"
+            alt="profile pic"
+            class="max-h-[70vh] w-full rounded-4xl object-cover shadow-[0_0_40px_-10px_rgba(0,0,0,0.4)] transition-transform duration-700 ease-out group-hover:scale-[1.03] md:w-[90%]"
+            loading="lazy"
+          />
+
+          <!-- <video
+            class="hover-lift max-h-[70vh] w-full rounded-2xl object-cover shadow-lg"
+            src="https://imagine-public.x.ai/imagine-public/share-videos/54297a2a-7760-41b6-bf5f-68185f8a820f_hd.mp4?cache=1"
+            autoplay
+            loop
+            muted
+            playsinline
+          ></video> -->o
+        </div>
+      </section>
+
+      <!-- 🌌 ABOUT — The Human + Code Experience -->
+      <section id="about" class="section effect-particles reveal-zoom relative isolate overflow-hidden py-28 text-text-light dark:text-text-dark">
+        <!-- ⚡ Background Glows -->
+        <div class="absolute inset-0 -z-10 overflow-hidden">
+          <div class="animate-float-slow absolute top-1/4 left-1/3 h-80 w-[20rem] rounded-full bg-sky-400/25 blur-[100px] md:h-112 md:w-md md:blur-[140px]"></div>
+          <div class="animate-float-slow-delayed absolute right-1/4 bottom-1/4 h-72 w-[18rem] rounded-full bg-fuchsia-500/25 blur-[90px] md:h-96 md:w-[24rem] md:blur-[120px]"></div>
+        </div>
+
+        <!-- ✨ MAIN CONTENT -->
+        <div class="section-container flex flex-col items-center gap-20 md:flex-row md:gap-24 lg:max-w-6xl">
+          <!-- 🧠 TEXT BLOCK -->
+          <div class="reveal-left w-full space-y-8 md:w-1/2">
+            <div class="reveal-blur">
+              <span class="inline-block rounded-full bg-sky-400/20 px-4 py-1 text-sm font-medium text-sky-500">/ About × Me /</span>
+              <h2 class="text-gradient text-gradient-skypink reveal-up mt-6 text-4xl leading-tight font-bold">Crafting Digital Consciousness.</h2>
+            </div>
+
+            <p class="reveal-up">
+              I don’t just write code — I
+              <strong>engineer emotion through interaction</strong>. Every animation, color, and transition reflects intent. My craft isn’t about websites — it’s about
+              <span class="font-semibold text-brand-tertiary">digital presence</span>
+              that resonates.
+            </p>
+
+            <p class="reveal-up">
+              I build premium websites for startups & creators — with modern trendy designs, performance-first engineering, and a brand experience that stands out and turn ideas into scalable,
+              high-performance web apps <em class="text-brand-primary">— with a premium user experience.</em>
+            </p>
+
+            <p>
+              <strong class="text-gradient text-gradient-cool"
+                >If you want a website that stands out and actually performs <br />
+                — I’m your guy.
+              </strong>
+            </p>
+
+            <div class="reveal-blur flex flex-wrap gap-3 pt-6">
+              <span class="rounded-full border border-sky-400/40 bg-sky-400/10 px-4 py-1 text-sm text-sky-400 backdrop-blur-sm">Next.js</span>
+              <span class="rounded-full border border-violet-400/40 bg-violet-400/10 px-4 py-1 text-sm text-violet-400 backdrop-blur-sm">Framer Motion</span>
+              <span class="rounded-full border border-fuchsia-400/40 bg-fuchsia-400/10 px-4 py-1 text-sm text-fuchsia-400 backdrop-blur-sm">Node.js</span>
+              <span class="rounded-full border border-pink-400/40 bg-pink-400/10 px-4 py-1 text-sm text-pink-400 backdrop-blur-sm">Tailwind</span>
+            </div>
+          </div>
+
+          <!-- 🎞️ CARD + FLOATING ELEMENTS -->
+          <div class="reveal-zoom md:reveal-left relative flex w-full justify-center md:w-1/2">
+            <div class="relative w-fit">
+              <!-- Main Card -->
+              <div class="tilt-wrapper">
+                <div class="tilt-card glass-card dark:glass-card-dark relative flex aspect-square max-w-[90vw] flex-col items-center justify-center text-center shadow-xl sm:h-80 sm:w-80">
+                  <div class="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-linear-to-br from-sky-500 to-fuchsia-500 shadow-lg sm:h-24 sm:w-24">
+                    <i class="fas fa-code text-3xl text-white"></i>
+                  </div>
+                  <h3 class="mb-1 text-xl font-semibold sm:text-2xl">Full Stack Innovator</h3>
+                  <p class="text-xs md:text-sm">Engineering elegance in motion.</p>
+                  <div class="mt-6 flex flex-wrap justify-center gap-2">
+                    <span class="rounded-md bg-sky-500/20 px-3 py-1 text-xs text-sky-400 sm:text-sm">Frontend </span>
+                    <span class="rounded-full bg-fuchsia-500/20 px-3 py-1 text-xs text-fuchsia-400 sm:text-sm"> + </span>
+                    <span class="rounded-md bg-violet-500/20 px-3 py-1 text-xs text-violet-400 sm:text-sm">Backend</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Floating Mini Cards -->
+              <!-- Mini Card 1: Responsive (gentle sideways sway) -->
+              <div class="glass-card dark:glass-card-dark absolute -top-6 -right-4 flex h-20 w-20 animate-bounce flex-col items-center justify-center shadow-lg sm:-top-5 sm:-right-5 sm:h-24 sm:w-24">
+                <i class="fas fa-mobile-alt mb-1 text-lg text-sky-400 sm:text-xl"></i>
+                <span class="text-[10px] text-sky-400 sm:text-xs">Responsive</span>
+              </div>
+
+              <!-- Mini Card 2: Performance (vertical float) -->
+              <div
+                class="glass-card dark:glass-card-dark animate-float-y absolute -bottom-12 -left-6 flex h-20 w-20 flex-col items-center justify-center shadow-lg sm:-bottom-16 sm:-left-8 sm:h-24 sm:w-24"
+                style="animation-delay: 1.5s"
+              >
+                <i class="fas fa-bolt mb-1 text-lg text-fuchsia-400 sm:text-xl"></i>
+                <span class="text-[10px] text-fuchsia-400 sm:text-xs">Performance</span>
+              </div>
+
+              <!-- Mini Card 3: Modern (rotational drift) -->
+              <div
+                class="glass-card dark:glass-card-dark animate-float-rotate absolute top-1/2 -right-10 flex h-20 w-20 flex-col items-center justify-center shadow-lg sm:-right-16 sm:h-24 sm:w-24"
+                style="animation-delay: 3s"
+              >
+                <i class="fas fa-rocket mb-1 text-lg text-violet-400 sm:text-xl"></i>
+                <span class="text-[10px] text-violet-400 sm:text-xs">Modern</span>
+              </div>
+
+              <!-- Halo Animation -->
+              <div class="animate-rotate-slow absolute -top-10 -right-10 h-28 w-28 rounded-full border border-sky-400 opacity-30 blur-sm sm:-top-12 sm:-right-12 sm:h-40 sm:w-40"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ⚙️ What I Do -->
+      <section id="offer" class="section reveal-zoom">
+        <div class="container mx-auto">
+          <div class="layout">
+            <!-- Intro with Wave + Blur -->
+            <div class="intro reveal-blur">
+              <h2 class="section-heading text-gradient text-gradient-neon reveal-up text-center md:text-start">What I Offer</h2>
+              <p class="subtitle reveal-up text-center md:text-start">Building scalable, performant, and visually engaging web experiences through modern tech and clean design.</p>
+            </div>
+
+            <!-- Cards Container with Matrix & Noise -->
+            <div class="card-container relative">
+              <!-- Decorative Rings -->
+              <div class="absolute top-0 left-0 -mt-5 -ml-12 size-40 rounded-full border border-orange-400 bg-transparent lg:size-72 dark:border-orange-900"></div>
+              <div class="absolute top-0 left-0 -mt-2 -ml-14 size-40 rounded-full border border-orange-200 bg-transparent lg:size-72 dark:border-orange-950"></div>
+              <div class="absolute right-0 bottom-0 -mr-12 -mb-5 size-40 rounded-full border border-purple-400 bg-transparent lg:size-72 dark:border-purple-900"></div>
+              <div class="absolute right-0 bottom-0 -mr-14 -mb-2 size-40 rounded-full border border-purple-200 bg-transparent lg:size-72 dark:border-purple-950"></div>
+
+              <!-- Feature Cards with sequential reveals -->
+              <div class="group feature-card effect-stars reveal-left stagger-1 md:translate-y-10">
+                <div class="icon">⚙️</div>
+                <h3 class="heading">Full Stack Dev</h3>
+                <p>From backend APIs to dynamic frontends — I deliver robust systems end-to-end.</p>
+              </div>
+
+              <div class="group feature-card effect-particles reveal-up stagger-2 md:-translate-y-10">
+                <div class="icon">🎨</div>
+                <h3 class="heading">Modern UI/UX</h3>
+                <p>Responsive, accessible, and user-focused designs built to convert and delight.</p>
+              </div>
+
+              <div class="group feature-card effect-noise reveal-zoom stagger-3 md:translate-y-10">
+                <div class="icon">🚀</div>
+                <h3 class="heading">Performance</h3>
+                <p>Optimized for speed, SEO, and efficiency — every component is tuned for excellence.</p>
+              </div>
+
+              <div class="group feature-card reveal-up stagger-4 md:-translate-y-10">
+                <div class="icon">🔧</div>
+                <h3 class="heading">Maintenance</h3>
+                <p>Ongoing support and updates to keep your applications running smoothly.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 📊 Ultra-Premium Stats Section (Full Tailwind Version) -->
+      <section id="stats" class="section relative overflow-hidden">
+        <!-- Background Layers -->
+        <div class="effect-particles absolute inset-0 z-0"></div>
+        <div class="effect-stars absolute inset-0 z-0"></div>
+
+        <!-- Polygon + BG -->
+        <div class="pointer-events-none absolute inset-0 isolate z-0 bg-glass-dark/20 [clip-path:polygon(0_0,100%_12%,100%_100%,0_88%)] dark:bg-[image:var(--gradient-cool)] dark:opacity-50"></div>
+
+        <!-- Content -->
+        <div class="section-container relative z-2 py-22 text-center">
+          <!-- Heading -->
+          <h2 class="section-heading text-gradient text-gradient-skypink reveal-up stagger-1">Stats at a Glance 🚀</h2>
+
+          <!-- Stat Grid -->
+          <div class="mt-16 grid grid-cols-2 gap-10 sm:gap-12 md:grid-cols-4 lg:gap-16">
+            <!-- Card -->
+            <div class="stat-magnetic card-aurora stat-card reveal-float stagger-1 relative transform-gpu transition-transform duration-200 ease-out">
+              <div class="stat-card-inner translate-z-10 transform-gpu transition-transform duration-200">
+                <p
+                  class="stat-number bg-gradient-neon bg-clip-text text-[4rem] font-black text-transparent drop-shadow-[0_0_12px_oklch(0.85_0.12_280/0.4)] transition-all duration-400"
+                  data-target="6"
+                >
+                  0
+                </p>
+
+                <p class="stat-label bg-gradient-skypink mt-2 bg-clip-text text-[1.1rem] font-semibold text-transparent">Projects</p>
+              </div>
+            </div>
+
+            <!-- Card -->
+            <div class="stat-magnetic card-aurora stat-card reveal-float stagger-2 relative transform-gpu transition-transform duration-200 ease-out">
+              <div class="stat-card-inner translate-z-10 transform-gpu transition-transform duration-200">
+                <p
+                  class="stat-number bg-gradient-neon bg-clip-text text-[4rem] font-black text-transparent drop-shadow-[0_0_12px_oklch(0.85_0.12_280/0.4)] transition-all duration-400"
+                  data-target="4"
+                >
+                  0
+                </p>
+
+                <p class="stat-label bg-gradient-skypink mt-2 bg-clip-text text-[1.1rem] font-semibold text-transparent">Clients</p>
+              </div>
+            </div>
+
+            <!-- Card -->
+            <div class="stat-magnetic card-aurora stat-card reveal-float stagger-3 relative transform-gpu transition-transform duration-200 ease-out">
+              <div class="stat-card-inner translate-z-10 transform-gpu transition-transform duration-200">
+                <p
+                  class="stat-number bg-gradient-neon bg-clip-text text-[4rem] font-black text-transparent drop-shadow-[0_0_12px_oklch(0.85_0.12_280/0.4)] transition-all duration-400"
+                  data-target="3"
+                >
+                  0
+                </p>
+
+                <p class="stat-label bg-gradient-skypink mt-2 bg-clip-text text-[1.1rem] font-semibold text-transparent">Experience</p>
+              </div>
+            </div>
+
+            <!-- Card -->
+            <div class="stat-magnetic card-aurora stat-card reveal-float stagger-4 relative transform-gpu transition-transform duration-200 ease-out">
+              <div class="stat-card-inner translate-z-10 transform-gpu transition-transform duration-200">
+                <p
+                  class="stat-number bg-gradient-neon bg-clip-text text-[4rem] font-black text-transparent drop-shadow-[0_0_12px_oklch(0.85_0.12_280/0.4)] transition-all duration-400"
+                  data-target="99"
+                >
+                  0
+                </p>
+
+                <p class="stat-label bg-gradient-skypink mt-2 bg-clip-text text-[1.1rem] font-semibold text-transparent">Satisfaction</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 🎓 Education — Lumin Prism Experience -->
+      <section id="education" class="section relative overflow-hidden bg-bg-light text-text-light dark:bg-bg-dark dark:text-text-dark">
+        <!-- FX -->
+        <div class="effect-aurora absolute inset-0 opacity-50"></div>
+        <div class="effect-stars absolute inset-0 opacity-30"></div>
+        <div class="effect-particles absolute inset-0 opacity-25"></div>
+
+        <!-- Header -->
+        <div class="section-container relative z-10 mb-16 text-center">
+          <h2 class="section-heading text-gradient text-gradient-neon reveal-zoom">Education</h2>
+          <p class="section-subtext reveal-fade-scale">Academic milestones that grounded my craft and expanded my vision.</p>
+        </div>
+
+        <!-- Prism Grid -->
+        <div class="relative z-10 mx-auto flex flex-col items-center justify-center gap-28 md:flex-row md:gap-16 lg:gap-28">
+          <!-- 🎓 MBA Prism -->
+          <div class="group reveal-left prism-light before:animate-sweep relative">
+            <!-- Glow Ring -->
+            <div
+              class="animate-pulse-slow absolute inset-0 -z-10 h-64 w-64 rounded-full bg-linear-to-br from-sky-300/10 via-fuchsia-300/10 to-violet-300/10 blur-[120px] dark:from-sky-500/20 dark:via-fuchsia-500/15 dark:to-violet-400/10"
+            ></div>
+
+            <!-- Prism -->
+            <div
+              class="relative h-[340px] w-[300px] rounded-3xl border border-sky-300/30 bg-glass-light shadow-[0_0_35px_-12px_oklch(0.55_0.08_260_/0.25)] backdrop-blur-2xl transition-all duration-700 hover:-translate-y-3 hover:rotate-[1.5deg] hover:shadow-[0_0_55px_-10px_oklch(0.58_0.1_250_/0.35)] dark:border-sky-400/30 dark:bg-glass-dark dark:shadow-[0_0_50px_-10px_oklch(0.7_0.18_280_/0.4)] dark:hover:shadow-[0_0_80px_-10px_oklch(0.78_0.22_280_/0.6)]"
+            >
+              <!-- Inner mist -->
+              <div
+                class="/* Light mode softer gradient */ /* Dark neon gradient */ absolute inset-0 rounded-3xl bg-linear-to-br from-sky-300/15 via-fuchsia-300/10 to-transparent opacity-50 blur-2xl dark:from-sky-500/15 dark:via-fuchsia-400/10 dark:to-transparent"
+              ></div>
+
+              <div class="absolute inset-0 rounded-3xl border border-white/10 mix-blend-overlay"></div>
+
+              <!-- CONTENT -->
+              <div class="relative flex h-full flex-col items-center justify-center px-6 text-center">
+                <i class="fas fa-graduation-cap mb-5 text-4xl text-sky-400 transition-all duration-500 group-hover:scale-110"></i>
+
+                <h3 class="text-gradient text-gradient-neon text-2xl font-semibold">MBA (IT & HR)</h3>
+
+                <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Subharti University DDE, Meerut</p>
+                <p class="text-xs text-gray-400 dark:text-gray-500">2020 – 2022</p>
+
+                <div class="mt-6 h-px w-3/4 bg-linear-to-r from-sky-300 via-fuchsia-300 to-transparent opacity-60 dark:from-sky-400 dark:via-fuchsia-400 dark:to-transparent"></div>
+
+                <p class="mt-4 text-sm text-gray-500 dark:text-gray-400">Blending management principles with digital transformation — the art of leading technology through people.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 🎓 BCA Prism -->
+          <div class="group reveal-right prism-light before:animate-sweep-delayed relative">
+            <!-- Glow Ring -->
+            <div
+              class="animate-pulse-slow-delayed /* LIGHT MODE soft warm */ /* DARK neon warm */ absolute inset-0 -z-10 h-64 w-64 rounded-full bg-linear-to-br from-orange-300/10 via-pink-300/10 to-rose-300/10 blur-[120px] dark:from-orange-500/20 dark:via-pink-500/15 dark:to-rose-400/10"
+            ></div>
+
+            <!-- Prism -->
+            <div
+              class="relative h-[340px] w-[300px] rounded-3xl border border-orange-300/30 bg-glass-light shadow-[0_0_35px_-12px_oklch(0.55_0.08_260_/0.25)] backdrop-blur-2xl transition-all duration-700 hover:-translate-y-3 hover:-rotate-[1.5deg] hover:shadow-[0_0_55px_-10px_oklch(0.58_0.1_250_/0.35)] dark:border-orange-400/30 dark:bg-glass-dark dark:shadow-[0_0_50px_-10px_oklch(0.75_0.24_70_/0.4)] dark:hover:shadow-[0_0_80px_-10px_oklch(0.78_0.28_40_/0.6)]"
+            >
+              <!-- Inner mist -->
+              <div
+                class="/* Light mode soft */ /* Dark mode neon */ absolute inset-0 rounded-3xl bg-linear-to-br from-orange-300/15 via-pink-300/10 to-transparent opacity-50 blur-2xl dark:from-orange-500/15 dark:via-pink-400/10 dark:to-transparent"
+              ></div>
+
+              <div class="absolute inset-0 rounded-3xl border border-white/10 mix-blend-overlay"></div>
+
+              <!-- CONTENT -->
+              <div class="relative flex h-full flex-col items-center justify-center px-6 text-center">
+                <i class="fas fa-laptop-code mb-5 text-4xl text-orange-400 transition-all duration-500 group-hover:scale-110"></i>
+
+                <h3 class="text-gradient text-gradient-warm text-2xl font-semibold">BCA</h3>
+
+                <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Arcade Business College, Patna</p>
+                <p class="text-xs text-gray-400 dark:text-gray-500">Magadh University, Bodh Gaya (2015 – 2018)</p>
+
+                <div class="mt-6 h-px w-3/4 bg-linear-to-r from-orange-300 via-pink-300 to-transparent opacity-60 dark:from-orange-400 dark:via-pink-400 dark:to-transparent"></div>
+
+                <p class="mt-4 text-sm text-gray-500 dark:text-gray-400">The genesis of logic, structure, and design — where my coding fundamentals came alive.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Center Trail -->
+        <div
+          class="animate-spin-slow pointer-events-none absolute top-1/2 left-1/2 h-[1000px] w-[1000px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[conic-gradient(from_0deg,oklch(0.78_0.2_260/.15),transparent_70%)] blur-[180px]"
+        ></div>
+      </section>
+
+      <!-- 🧠 Skills -->
+      <section id="skills" class="section relative overflow-hidden py-36">
+        <div class="section-container text-center">
+          <!-- Section Heading -->
+          <div class="effect-stars reveal-glow mb-16">
+            <h2 class="section-heading text-gradient text-gradient-skypink">Tech Stack & Skills</h2>
+            <p class="section-subtext reveal-fade-scale">A curated blend of tools I use daily to craft seamless, performant, and aesthetic web experiences.</p>
+          </div>
+
+          <!-- Grid -->
+          <div class="mt-16 grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+            <!-- 1️⃣ HTML — reveal-up -->
+            <div class="tilt-wrapper">
+              <div class="glass-card tilt-card group hover-glow effect-wave reveal-up flex flex-col items-center justify-center py-8">
+                <i class="fab fa-html5 mb-3 text-5xl text-orange-500 transition-transform group-hover:scale-110"></i>
+                <h3 class="text-base font-semibold">HTML5</h3>
+              </div>
+            </div>
+
+            <!-- 2️⃣ TypeScript — reveal-left -->
+            <div class="tilt-wrapper">
+              <div class="glass-card tilt-card group hover-glow effect-wave reveal-left flex flex-col items-center justify-center py-8">
+                <i class="fab fa-js mb-3 text-5xl text-yellow-400 transition-transform group-hover:scale-110"></i>
+                <h3 class="text-base font-semibold">TypeScript</h3>
+              </div>
+            </div>
+
+            <!-- 3️⃣ React — reveal-right -->
+            <div class="tilt-wrapper">
+              <div class="glass-card tilt-card group hover-glow effect-wave reveal-right flex flex-col items-center justify-center py-8">
+                <i class="fab fa-react mb-3 text-5xl text-cyan-400 transition-transform group-hover:scale-110"></i>
+                <h3 class="text-base font-semibold">React</h3>
+              </div>
+            </div>
+
+            <!-- 4️⃣ Node.js — reveal-down -->
+            <div class="tilt-wrapper">
+              <div class="glass-card tilt-card group hover-glow effect-wave reveal-down flex flex-col items-center justify-center py-8">
+                <i class="fab fa-node-js mb-3 text-5xl text-green-500 transition-transform group-hover:scale-110"></i>
+                <h3 class="text-base font-semibold">Node.js</h3>
+              </div>
+            </div>
+
+            <!-- 5️⃣ Tailwind — reveal-diagonal -->
+            <div class="tilt-wrapper">
+              <div class="glass-card tilt-card group hover-glow effect-wave reveal-diagonal flex flex-col items-center justify-center py-8">
+                <i class="fas fa-wind mb-3 text-5xl text-cyan-400 transition-transform group-hover:scale-110"></i>
+                <h3 class="text-base font-semibold">Tailwind</h3>
+              </div>
+            </div>
+
+            <!-- 6️⃣ Next.js — reveal-flip -->
+            <div class="tilt-wrapper">
+              <div class="glass-card tilt-card group hover-glow effect-wave reveal-flip flex flex-col items-center justify-center py-8">
+                <i class="fas fa-layer-group mb-3 text-5xl text-gray-400 transition-transform group-hover:scale-110"></i>
+                <h3 class="text-base font-semibold">Next.js</h3>
+              </div>
+            </div>
+
+            <!-- 7️⃣ MongoDB — reveal-zoom -->
+            <div class="tilt-wrapper">
+              <div class="glass-card tilt-card group hover-glow effect-wave reveal-zoom flex flex-col items-center justify-center py-8">
+                <i class="fas fa-database mb-3 text-5xl text-emerald-500 transition-transform group-hover:scale-110"></i>
+                <h3 class="text-base font-semibold">MongoDB</h3>
+              </div>
+            </div>
+
+            <!-- 8️⃣ Git / GitHub — reveal-rotate -->
+            <div class="tilt-wrapper">
+              <div class="glass-card tilt-card group hover-glow effect-wave reveal-rotate flex flex-col items-center justify-center py-8">
+                <i class="fab fa-git-alt mb-3 text-5xl text-orange-600 transition-transform group-hover:scale-110"></i>
+                <h3 class="text-base font-semibold">Git / GitHub</h3>
+              </div>
+            </div>
+
+            <!-- 9️⃣ Docker — reveal-slide-up -->
+            <div class="tilt-wrapper">
+              <div class="glass-card tilt-card group hover-glow effect-wave reveal-slide-up flex flex-col items-center justify-center py-8">
+                <i class="fab fa-docker mb-3 text-5xl text-sky-400 transition-transform group-hover:scale-110"></i>
+                <h3 class="text-base font-semibold">Docker</h3>
+              </div>
+            </div>
+
+            <!-- 🔟 Firebase — reveal-slide-down -->
+            <div class="tilt-wrapper">
+              <div class="glass-card tilt-card group hover-glow effect-wave reveal-slide-down flex flex-col items-center justify-center py-8">
+                <i class="fas fa-fire mb-3 text-5xl text-amber-400 transition-transform group-hover:scale-110"></i>
+                <h3 class="text-base font-semibold">Firebase</h3>
+              </div>
+            </div>
+
+            <!-- 11️⃣ AWS — reveal-drop -->
+            <div class="tilt-wrapper">
+              <div class="glass-card tilt-card group hover-glow effect-wave reveal-drop flex flex-col items-center justify-center py-8">
+                <i class="fas fa-cloud mb-3 text-5xl text-orange-400 transition-transform group-hover:scale-110"></i>
+                <h3 class="text-base font-semibold">AWS</h3>
+              </div>
+            </div>
+
+            <!-- 12️⃣ Linux — reveal-glow -->
+            <div class="tilt-wrapper">
+              <div class="glass-card tilt-card group hover-glow effect-wave reveal-glow flex flex-col items-center justify-center py-8">
+                <i class="fab fa-linux mb-3 text-5xl text-slate-500 transition-transform group-hover:scale-110"></i>
+                <h3 class="text-base font-semibold">Linux</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 📜 Experience -->
+      <section id="experience" class="section relative overflow-visible py-24">
+        <!-- 🌌 Background / Visual Effect -->
+        <div class="effect-aurora absolute inset-0 opacity-40"></div>
+
+        <div class="container mx-auto px-6 lg:px-10">
+          <!-- 🏷️ Heading -->
+          <div class="reveal-zoom mb-16 text-center">
+            <h2 class="section-heading text-gradient text-gradient-neon">Experience</h2>
+            <p class="section-subtext">A journey through building, scaling, and crafting web experiences that feel alive.</p>
+          </div>
+
+          <!-- 🕓 Timeline -->
+          <div class="relative mx-auto max-w-4xl border-l-2 border-border-light pl-10 dark:border-border-dark">
+            <!-- 📌 Experience 1 -->
+            <div class="tilt-wrapper mb-12">
+              <div class="glass-card tilt-card effect-stars reveal-left group relative ml-4 flex flex-col items-start justify-center p-8 transition-all hover:-translate-y-2">
+                <span class="absolute top-8 -left-5 size-4 rounded-full bg-brand-primary shadow-lg shadow-brand-primary/40"></span>
+                <h3 class="text-gradient text-gradient-brand text-xl font-semibold">Freelance Full Stack Developer</h3>
+                <p class="text-sm text-gray-500">Jan 2026 – Present</p>
+                <p class="mt-3 text-gray-600 dark:text-gray-300">
+                  Delivering high-performance web solutions for startups using
+                  <strong class="text-sky-400">Next.js</strong> and <strong class="text-fuchsia-400">Node.js</strong>.
+                </p>
+              </div>
+            </div>
+
+            <!-- 📌 Experience 2 -->
+            <div class="tilt-wrapper mb-12">
+              <div class="glass-card tilt-card effect-wave reveal-up group relative ml-4 flex flex-col items-start justify-center p-8 transition-all hover:-translate-y-2">
+                <span class="absolute top-8 -left-5 size-4 rounded-full bg-brand-secondary shadow-lg shadow-brand-secondary/40"></span>
+                <h3 class="text-gradient text-gradient-cool text-xl font-semibold">Frontend Engineer – Shivir International</h3>
+                <p class="text-sm text-gray-500">Nov 2023 – Sept 2025</p>
+                <p class="mt-3 text-gray-600 dark:text-gray-300">
+                  Designed & optimized UIs with
+                  <strong class="text-cyan-400">Framer Motion</strong>, <strong class="text-violet-400">GSAP</strong>, and <strong class="text-orange-400">Tailwind</strong>.
+                </p>
+              </div>
+            </div>
+
+            <!-- 📌 Experience 3 -->
+            <div class="tilt-wrapper">
+              <div class="glass-card tilt-card effect-matrix reveal-right group relative ml-4 flex flex-col items-start justify-center p-8 transition-all hover:-translate-y-2">
+                <span class="absolute top-8 -left-5 size-4 rounded-full bg-brand-warm shadow-lg shadow-brand-warm/40"></span>
+                <h3 class="text-gradient text-gradient-warm text-xl font-semibold">Software Trainee – AWC Software</h3>
+                <p class="text-sm text-gray-500">July 2022 – Oct 2023</p>
+                <p class="mt-3 text-gray-600 dark:text-gray-300">
+                  Built foundational skills in
+                  <strong class="text-green-400">React</strong> and <strong class="text-amber-400">API integrations</strong>, crafting responsive UI systems.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 🚀 Projects — Chrono Series -->
+      <section id="projects" class="rrelative overflow-hidden bg-bg-light py-36 dark:bg-linear-to-b dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
+        <!-- Ambient FX -->
+        <div class="effect-aurora absolute inset-0 opacity-40"></div>
+        <div class="effect-stars absolute inset-0 opacity-15"></div>
+
+        <!-- Section Heading -->
+        <div class="section-container relative z-10 mb-16 text-center">
+          <h2 class="section-heading text-gradient text-gradient-neon reveal-zoom">Featured Work</h2>
+          <p class="section-subtext reveal-fade-scale text-gray-400">Code meets imagination — built with obsession and intent.</p>
+        </div>
+
+        <!-- Grid -->
+        <div class="section-container relative z-10 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
+          <!-- Project Card -->
+          <div class="chrono-card group reveal-left">
+            <div class="chrono-bg from-sky-400/15 via-fuchsia-500/10 to-transparent"></div>
+            <div class="chrono-glow"></div>
+            <div class="chrono-light"></div>
+            <img src="https://images-public.x.ai/xai-images-public/mj/images/c77534b4-f949-4875-98e2-ceecaba88166.png?cache=1" alt="Sanatan Wiki" class="chrono-image" />
+            <div class="chrono-info">
+              <h3>Sanatan Wiki</h3>
+              <p>A spiritual knowledge base with AI search and interactive UI.</p>
+              <div class="chrono-tags"><span>Next.js</span><span>React</span><span>Tailwind</span></div>
+            </div>
+          </div>
+
+          <!-- Project Card -->
+          <div class="chrono-card group reveal-up">
+            <div class="chrono-bg from-purple-400/15 via-cyan-400/10 to-transparent"></div>
+            <div class="chrono-glow"></div>
+            <div class="chrono-light"></div>
+            <img src="https://imagine-public.x.ai/imagine-public/images/aa602245-59f0-4648-acb3-9873d7eaaaf2.png?cache=1" alt="GovAdda" class="chrono-image" />
+            <div class="chrono-info">
+              <h3>GovAdda</h3>
+              <p>A government analytics portal powered by AI summarization.</p>
+              <div class="chrono-tags"><span>Next.js</span><span>TypeScript</span><span>Tailwind</span></div>
+            </div>
+          </div>
+
+          <!-- Project Card -->
+          <div class="chrono-card group reveal-right">
+            <div class="chrono-bg from-orange-400/15 via-pink-400/10 to-transparent"></div>
+            <div class="chrono-glow"></div>
+            <div class="chrono-light"></div>
+            <img src="https://images-public.x.ai/xai-images-public/mj/images/ca39d0df-338c-44e0-b7ee-5bb0dbde5447.png?cache=1" alt="Portfolio" class="chrono-image" />
+            <div class="chrono-info">
+              <h3>Personal Portfolio</h3>
+              <p>Modern glass interface built with Tailwind v4 & Framer Motion.</p>
+              <div class="chrono-tags"><span>Next.js</span><span>Framer Motion</span><span>Tailwind</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ambient Trail -->
+        <div
+          class="animate-spin-slow pointer-events-none absolute top-1/2 left-1/2 h-[900px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[conic-gradient(from_0deg,oklch(0.78_0.2_260/.15),transparent_70%)] blur-[180px]"
+        ></div>
+      </section>
+
+      <!-- 🌟 Case Study: GovAdda — Government Access Simplified -->
+      <section id="case-govadda" class="section relative overflow-hidden">
+        <!-- Ambient FX -->
+        <div class="effect-aurora absolute inset-0 z-0 opacity-40"></div>
+        <div class="effect-stars absolute inset-0 z-0 opacity-20"></div>
+
+        <!-- Section Heading -->
+        <div class="section-container relative z-20 mb-16 text-center">
+          <h2 class="section-heading text-gradient text-gradient-neon reveal-zoom">Case Study</h2>
+          <p class="section-subtext reveal-fade-scale text-gray-400">Premium web experiences — tested by users, loved by businesses.</p>
+        </div>
+        <!-- 🌐 Layout -->
+        <div class="section-container z-20 grid grid-cols-1 items-center gap-20 md:grid-cols-2">
+          <!-- 🖼️ Hero Visual (Left) -->
+          <div class="reveal-left relative">
+            <!-- ✨ PLACE YOUR GOVADDA HERO SCREENSHOT HERE -->
+            <div class="tilt-wrapper group cursor-pointer">
+              <img
+                src="https://images-public.x.ai/xai-images-public/imagine/images/c2f12baa-85ca-4a41-af86-199dbf65ed3f.png"
+                alt="GovAdda Preview"
+                class="tilt-card h-[380px] w-full rounded-3xl border border-border-light object-cover shadow-[0_0_45px_-12px_oklch(0.7_0.2_260/0.35)] transition-transform duration-700 ease-out group-hover:scale-[1.03] md:h-[460px] dark:border-border-dark "
+              />
+            </div>
+
+            <!-- Glow Trail -->
+            <div class="absolute inset-0 -z-10 bg-[conic-gradient(from_0deg,oklch(0.78_0.2_260/.15),transparent_70%)] opacity-30 blur-[160px]"></div>
+          </div>
+
+          <!-- 📌 Summary + Tech Stack (Right) -->
+          <div class="reveal-right space-y-6">
+            <h2 class="text-gradient text-gradient-neon text-4xl leading-tight font-bold">GovAdda — Government Access Simplified</h2>
+
+            <p class="max-w-lg text-lg text-gray-600 dark:text-gray-300">
+              A structured discovery platform to explore verified government schemes, initiatives & news — tailored by state, category & public interest.
+            </p>
+
+            <!-- Feature List -->
+            <ul class="space-y-3 text-sm text-gray-500 dark:text-gray-400">
+              <li>✔ Filters by Central, State & UT Governments</li>
+              <li>✔ Smart navigation: Category → Subcategory → Scheme</li>
+              <li>✔ Performance-first, SEO-optimized content</li>
+              <li>✔ Premium UI + engaging motion design</li>
+            </ul>
+
+            <!-- Division Line -->
+            <div class="h-px w-2/3 bg-linear-to-r from-brand-primary/50 to-transparent"></div>
+
+            <!-- Technology Pills -->
+            <div class="flex flex-wrap gap-3">
+              <span class="rounded-full bg-sky-500/20 px-3 py-1 text-xs text-sky-400">Next.js</span>
+              <span class="rounded-full bg-purple-500/20 px-3 py-1 text-xs text-purple-400">Tailwind v4</span>
+              <span class="rounded-full bg-orange-500/20 px-3 py-1 text-xs text-orange-400">Framer Motion</span>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="mt-6 flex gap-4">
+              <a href="www.govadda.com" target="_blank" class="hover-glow rounded-md bg-brand-primary px-5 py-2.5 font-medium text-white"> Visit Live → </a>
+              <a href="#" target="_blank" class="rounded-md border border-border-light px-5 py-2.5 text-sm transition hover:bg-surface-light/40 dark:border-border-dark dark:hover:bg-surface-dark/40">
+                GitHub ↗
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 🏆 Achievements — Prism Edition -->
+      <section id="achievements" class="relative overflow-hidden bg-bg-light py-36 text-text-light dark:bg-bg-dark dark:text-text-dark">
+        <!-- Background FX -->
+        <div class="effect-aurora absolute inset-0 opacity-50"></div>
+        <div class="effect-stars absolute inset-0 opacity-30"></div>
+        <div class="effect-particles absolute inset-0 opacity-25"></div>
+
+        <!-- Header -->
+        <div class="section-container relative z-10 mb-24 text-center">
+          <h2 class="section-heading text-gradient text-gradient-neon reveal-zoom">Achievements</h2>
+          <p class="section-subtext reveal-fade-scale mx-auto max-w-xl">Skills recognized, projects that perform, and numbers that speak.</p>
+        </div>
+
+        <!-- Prism Grid -->
+        <div class="relative z-10 mx-auto flex flex-col items-center justify-center gap-28 md:flex-row md:gap-16 lg:gap-28">
+          <!-- 🔥 Achievement 1 — LinkedIn Certifications -->
+          <div class="group reveal-left prism-light open-modal relative cursor-pointer" data-modal="certModal">
+            <div class="prism-glow absolute inset-0 -z-10 h-64 w-64 rounded-full bg-[var(--gradient-cool)] opacity-25 blur-[120px] dark:opacity-40"></div>
+
+            <div class="prism-card relative">
+              <!-- Hover Glow -->
+              <div
+                class="pointer-events-none absolute inset-0 rounded-3xl bg-[radial-gradient(circle_at_50%_20%,oklch(0.78_0.22_270/.45),transparent_70%)] opacity-0 blur-2xl transition-opacity duration-700 group-hover:opacity-80"
+              ></div>
+
+              <!-- Border Shine -->
+              <div class="absolute inset-0 rounded-3xl border border-white/10 mix-blend-overlay"></div>
+
+              <!-- Badge Hover -->
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
+                class="absolute -top-4 -right-4 size-10 rounded-lg opacity-0 shadow-lg transition-opacity duration-500 group-hover:opacity-90"
+              />
+
+              <!-- CONTENT -->
+              <div class="relative flex h-full flex-col items-center justify-center px-7 text-center">
+                <i class="fa-solid fa-fire mb-5 text-4xl text-sky-400 transition-all duration-500 group-hover:scale-110"></i>
+
+                <h3 class="text-gradient text-gradient-neon mb-1 text-2xl font-semibold">LinkedIn Certified</h3>
+
+                <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Project Mgmt + DevOps</p>
+                <p class="text-xs text-gray-400 dark:text-gray-500">Issued 2024</p>
+
+                <div class="mt-6 h-[1px] w-3/4 bg-gradient-to-r from-sky-300 via-fuchsia-300 to-transparent opacity-60 dark:from-sky-400 dark:via-fuchsia-400 dark:to-transparent"></div>
+
+                <p class="mt-4 text-sm leading-relaxed text-gray-500 dark:text-gray-400">Certified in Agile, SDLC & CI/CD fundamentals.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 🚀 Achievement 2 — Featured Project -->
+          <div class="group reveal-right prism-light before:animate-sweep-delayed open-modal relative cursor-pointer" data-modal="featModal">
+            <div class="prism-glow absolute inset-0 -z-10 h-64 w-64 rounded-full bg-[var(--gradient-warm)] opacity-25 blur-[120px] dark:opacity-40"></div>
+
+            <div class="prism-card relative">
+              <!-- Hover Glow -->
+              <div
+                class="pointer-events-none absolute inset-0 rounded-3xl bg-[radial-gradient(circle_at_50%_20%,oklch(0.82_0.22_45/.45),transparent_70%)] opacity-0 blur-2xl transition-opacity duration-700 group-hover:opacity-80"
+              ></div>
+
+              <!-- Border Shine -->
+              <div class="absolute inset-0 rounded-3xl border border-white/10 mix-blend-overlay"></div>
+
+              <!-- Hover Badge -->
+              <span class="absolute -top-4 -right-4 rounded-md bg-black/60 px-2 py-1 text-xs text-white opacity-0 backdrop-blur transition group-hover:opacity-90"> 🚀 20K+/mo </span>
+
+              <!-- CONTENT -->
+              <div class="relative flex h-full flex-col items-center justify-center px-7 text-center">
+                <i class="fa-solid fa-rocket mb-5 text-4xl text-orange-400 transition-all duration-500 group-hover:scale-110"></i>
+
+                <h3 class="text-gradient text-gradient-warm mb-1 text-2xl font-semibold">Featured Project</h3>
+
+                <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">20K+ Monthly Visitors</p>
+                <p class="text-xs text-gray-400 dark:text-gray-500">2023 – Present</p>
+
+                <div class="mt-6 h-px w-3/4 bg-gradient-to-r from-orange-300 via-pink-300 to-transparent opacity-60 dark:from-orange-400 dark:via-pink-400 dark:to-transparent"></div>
+
+                <p class="mt-4 text-sm leading-relaxed text-gray-500 dark:text-gray-400">Designed for high scale, strong SEO & UI conversion.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Animated Trail -->
+        <div
+          class="animate-spin-slow pointer-events-none absolute top-1/2 left-1/2 h-[1000px] w-[1000px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--gradient-neon)] opacity-10 blur-[180px]"
+        ></div>
+      </section>
+
+      <!-- 🧩 Testimonials — Abhishek Premium Edition -->
+      <section class="relative overflow-hidden py-28">
+        <!-- Decorative Glows -->
+        <div class="pointer-events-none absolute inset-0">
+          <div
+            class="animate-float-slow absolute top-0 left-1/2 size-96 -translate-x-1/2 bg-linear-to-tr from-brand-primary/20 via-brand-secondary/10 to-transparent opacity-50 blur-3xl dark:opacity-40"
+          ></div>
+
+          <div class="animate-float-slow-delayed absolute right-0 bottom-0 size-80 bg-linear-to-tr from-brand-tertiary/15 via-brand-primary/10 to-transparent opacity-40 blur-2xl"></div>
+        </div>
+
+        <div class="reveal-bounce relative z-10 container mx-auto text-center">
+          <h2 class="section-heading text-gradient text-gradient-neon">What Clients Say 💬</h2>
+          <p class="section-subtext mx-auto max-w-2xl">Trusted by creators, founders, and teams worldwide — Abhishek builds experiences that are beautiful and performant.</p>
+
+          <!-- Grid -->
+          <div class="mt-16 grid auto-rows-fr items-stretch gap-10 md:grid-cols-2 lg:grid-cols-4">
+            <!-- CARD 1 -->
+            <div class="tilt-wrapper reveal-left stagger-1 h-full">
+              <div class="glass-card tilt-card hover-glow card-aurora parallax-card scroll-rotate animate-float-rotate group relative flex h-full flex-col justify-between overflow-hidden">
+                <p class="text-text-subtle min-h-[90px] italic dark:text-text-subtle-dark">“Abhishek transformed our startup’s idea into a world-class product.”</p>
+
+                <div class="mt-5 flex items-center justify-center gap-3">
+                  <img src="https://api.dicebear.com/9.x/adventurer/svg?seed=Raj" class="border-border/40 size-10 rounded-full border dark:border-border-dark/40" />
+                  <div class="text-left">
+                    <h4 class="text-text font-semibold dark:text-text-dark">Raj Mehta</h4>
+                    <p class="text-text-subtle text-sm dark:text-text-subtle-dark">Startup Founder</p>
+                  </div>
+                </div>
+
+                <div class="star-rating mt-4 mb-1">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="tilt-wrapper reveal-left stagger-2 h-full">
+              <div class="glass-card tilt-card hover-glow card-aurora parallax-card scroll-rotate animate-float-rotate group relative flex h-full flex-col justify-between overflow-hidden">
+                <p class="text-text-subtle min-h-[90px] italic dark:text-text-subtle-dark">“His design intuition is top-notch — the UI feels alive and our site now hits 99+ on Lighthouse.”</p>
+
+                <div class="mt-5 flex items-center justify-center gap-3">
+                  <img src="https://api.dicebear.com/9.x/adventurer/svg?seed=Neha" class="border-border/40 size-10 rounded-full border dark:border-border-dark/40" />
+                  <div class="text-left">
+                    <h4 class="text-text font-semibold dark:text-text-dark">Neha Sharma</h4>
+                    <p class="text-text-subtle text-sm dark:text-text-subtle-dark">Designer</p>
+                  </div>
+                </div>
+
+                <div class="star-rating mt-4 mb-1">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="tilt-wrapper reveal-left stagger-3 h-full">
+              <div class="glass-card tilt-card hover-glow card-aurora parallax-card scroll-rotate animate-float-rotate group relative flex h-full flex-col justify-between overflow-hidden">
+                <p class="text-text-subtle min-h-[90px] italic dark:text-text-subtle-dark">
+                  “A rare developer who codes like an engineer but thinks like a designer — perfect blend of logic + emotion.”
+                </p>
+
+                <div class="mt-5 flex items-center justify-center gap-3">
+                  <img src="https://api.dicebear.com/9.x/adventurer/svg?seed=Arjun" class="border-border/40 size-10 rounded-full border dark:border-border-dark/40" />
+                  <div class="text-left">
+                    <h4 class="text-text font-semibold dark:text-text-dark">Arjun Rao</h4>
+                    <p class="text-text-subtle text-sm dark:text-text-subtle-dark">Tech Lead</p>
+                  </div>
+                </div>
+
+                <div class="star-rating mt-4 mb-1">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half-stroke"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="tilt-wrapper reveal-left stagger-4 h-full">
+              <div class="glass-card tilt-card hover-glow card-aurora parallax-card scroll-rotate animate-float-rotate group relative flex h-full flex-col justify-between overflow-hidden">
+                <p class="text-text-subtle min-h-[90px] italic dark:text-text-subtle-dark">
+                  “Collaborating with Abhishek was like adding a creative engine — every problem became a beautifully engineered solution.”
+                </p>
+
+                <div class="mt-5 flex items-center justify-center gap-3">
+                  <img src="https://api.dicebear.com/9.x/adventurer/svg?seed=Kavya" class="border-border/40 size-10 rounded-full border dark:border-border-dark/40" />
+                  <div class="text-left">
+                    <h4 class="text-text font-semibold dark:text-text-dark">Kavya Menon</h4>
+                    <p class="text-text-subtle text-sm dark:text-text-subtle-dark">Product Designer</p>
+                  </div>
+                </div>
+
+                <div class="star-rating mt-4 mb-1">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ✉️ Contact -->
+      <section id="contact" class="effect-noise reveal-blur bg-surface-light/20 py-24 text-center dark:bg-surface-dark/20">
+        <div class="container mx-auto max-w-2xl">
+          <h2 class="section-heading text-gradient-sunset bg-clip-text text-transparent">Let’s Connect 🤝</h2>
+          <p class="section-subtext">Got a project or idea? Let’s build something great together.</p>
+          <!-- ⚡ Button Zone -->
+          <div class="reveal-up mt-10 flex flex-wrap justify-center gap-6">
+            <a href="mailto:team.abhishivay32@gmail.com" class="eclipse-btn-primary"> <i class="fa-solid fa-paper-plane"></i> Send Message </a>
+            <a href="https://in.linkedin.com/in/abhishek-kumar-1476871b9" target="_blank" class="eclipse-btn-secondary"> <i class="fa-brands fa-linkedin-in"></i> Let’s Connect </a>
+          </div>
+
+          <!-- 🌐 Social Minimal Strip -->
+          <div class="reveal-float mt-14 flex justify-center gap-6 text-lg">
+            <a href="https://github.com/yourgithub" target="_blank" class="lumin-social"><i class="fab fa-github"></i></a>
+            <a href="https://x.com/yourhandle" target="_blank" class="lumin-social"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://instagram.com/yourhandle" target="_blank" class="lumin-social"><i class="fab fa-instagram"></i></a>
+            <a href="https://dribbble.com/yourhandle" target="_blank" class="lumin-social"><i class="fab fa-dribbble"></i></a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- ⚡ Footer -->
+    <footer class="border-t border-border-light py-10 text-center text-sm text-gray-600 dark:border-border-dark dark:text-gray-400">© 2025 Abhishek Kumar — Crafted with ❤️ using Tailwind v4</footer>
+
+    <script>
+      const html = document.documentElement;
+      const toggle = document.getElementById("darkToggle");
+      const icon = document.getElementById("themeIcon");
+
+      // Load saved preference
+      if (localStorage.theme === "dark" || (!localStorage.theme && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        html.classList.add("dark");
+        icon.classList.replace("fa-moon", "fa-sun");
+      }
+
+      toggle.addEventListener("click", () => {
+        const isDark = html.classList.toggle("dark");
+        icon.classList.toggle("fa-sun", isDark);
+        icon.classList.toggle("fa-moon", !isDark);
+        localStorage.theme = isDark ? "dark" : "light";
+      });
+
+      // === Abhishek Motion Reveal Engine ===
+      document.addEventListener("DOMContentLoaded", () => {
+        const sections = document.querySelectorAll("section");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const elements = entry.target.querySelectorAll('[class*="reveal-"]');
+                elements.forEach((el, index) => {
+                  el.style.opacity = "1";
+                  el.style.animationPlayState = "running";
+                  el.style.animationDelay = `${index * 0.15}s`;
+                });
+              }
+            });
+          },
+          { threshold: 0.15 }
+        );
+
+        sections.forEach((section) => {
+          observer.observe(section);
+        });
+      });
+
+      // Parallax depth on scroll for elements with .prism class
+      const prisms = document.querySelectorAll(".prism");
+      window.addEventListener("scroll", () => {
+        const scrollY = window.scrollY;
+        prisms.forEach((p) => {
+          const depth = p.getAttribute("data-depth");
+          p.style.transform = `translateY(${scrollY * depth * 0.15}px)`;
+        });
+      });
+
+      /* ============================================================
+   🎮 Parallax Mouse Tilt System
+============================================================ */
+      document.querySelectorAll(".parallax-card").forEach((card) => {
+        card.addEventListener("mousemove", (e) => {
+          const r = card.getBoundingClientRect();
+          const x = e.clientX - (r.left + r.width / 2);
+          const y = e.clientY - (r.top + r.height / 2);
+
+          card.style.setProperty("--tilt-x", `${-y / 40}deg`);
+          card.style.setProperty("--tilt-y", `${x / 40}deg`);
+        });
+
+        card.addEventListener("mouseleave", () => {
+          card.style.setProperty("--tilt-x", `0deg`);
+          card.style.setProperty("--tilt-y", `0deg`);
+        });
+      });
+
+      /* ============================================================
+   🌀 Scroll-Based 3D Rotation System
+============================================================ */
+      // === Fixed: Define `stats` + safer scroll trigger ===
+      document.addEventListener("DOMContentLoaded", () => {
+        const stats = document.getElementById("stats");
+        if (!stats) return;
+
+        // IntersectionObserver for reveals
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const elements = entry.target.querySelectorAll('[class*="reveal-"]');
+                elements.forEach((el, i) => {
+                  el.style.opacity = "1";
+                  el.style.animationPlayState = "running";
+                  el.style.animationDelay = `${i * 0.15}s`;
+                });
+              }
+            });
+          },
+          { threshold: 0.15 }
+        );
+        observer.observe(stats);
+
+        // Magnetic effect
+        stats.querySelectorAll(".stat-magnetic").forEach((card) => {
+          const inner = card.querySelector(".stat-card-inner");
+          card.addEventListener("mousemove", (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            card.style.transform = `translate(${x * 0.04}px, ${y * 0.04}px)`;
+            inner.style.transform = `translateZ(40px) translate(${x * 0.05}px, ${y * 0.05}px)`;
+          });
+          card.addEventListener("mouseleave", () => {
+            card.style.transform = "";
+            inner.style.transform = "translateZ(40px)";
+          });
+        });
+
+        // Counter with IntersectionObserver (performs better than scroll)
+        let counted = false;
+        const counterObserver = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting && !counted) {
+              counted = true;
+              stats.querySelectorAll(".stat-number").forEach((counter) => {
+                const target = +counter.dataset.target;
+                let value = 0;
+                const increment = target / 120;
+                const update = () => {
+                  value += increment;
+                  if (value < target) {
+                    counter.textContent = Math.floor(value);
+                    requestAnimationFrame(update);
+                  } else {
+                    counter.textContent = target === 3 ? "3 yrs" : target === 99 ? "99%" : target + "+";
+                  }
+                };
+                update();
+              });
+            }
+          },
+          { threshold: 0.6 }
+        );
+        counterObserver.observe(stats);
+      });
+
+      // === Achievement Modals ===
+      const modals = {
+        certModal: {
+          title: "LinkedIn Certification",
+          desc: "Certified in Project Management & DevOps practices including Agile planning, CI/CD automation & cloud deployment fundamentals.",
+        },
+        featModal: {
+          title: "Featured Project",
+          desc: "One of my best performing platforms serving over 20,000+ monthly users with optimized SEO & engagement-focused UI.",
+        },
+      };
+
+      document.querySelectorAll(".open-modal").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const key = btn.dataset.modal;
+          const data = modals[key];
+
+          const modal = document.createElement("div");
+          modal.className = "fixed inset-0 bg-black/60 backdrop-blur z-[999] flex items-center justify-center";
+          modal.innerHTML = `
+      <div class="glass-card dark:glass-card-dark rounded-3xl p-8 max-w-sm text-center relative">
+        <button class="absolute top-3 right-3 text-xl text-gray-400 hover:text-white close-modal">&times;</button>
+        <h3 class="text-2xl font-bold mb-4">${data.title}</h3>
+        <p class="text-gray-300">${data.desc}</p>
+      </div>
+    `;
+          document.body.appendChild(modal);
+
+          modal.querySelector(".close-modal").onclick = () => modal.remove();
+        });
+      });
+
+      // === Animated Counters on Scroll ===
+      const visitorsCounterElement = document.querySelector('[data-modal="featModal"] p.text-sm');
+      let counted = false;
+
+      window.addEventListener("scroll", () => {
+        if (!visitorsCounterElement) return;
+        const rect = visitorsCounterElement.getBoundingClientRect();
+        if (!counted && rect.top < window.innerHeight) {
+          counted = true;
+          let num = 0;
+          const target = 20000;
+          const update = () => {
+            num += 200;
+            visitorsCounterElement.textContent = `🚀 ${num.toLocaleString()}+ Monthly Visitors`;
+            if (num < target) requestAnimationFrame(update);
+          };
+          update();
+        }
+      });
+    </script>
+  </body>
+</html>

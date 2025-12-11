@@ -1,0 +1,1040 @@
+@import url("https://fonts.googleapis.com/css2?family=Moon+Dance&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css");
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* =================================================
+   🎨 1. DESIGN TOKENS — Theme Variables (OKLCH + CSS Vars)
+   Reference: https://tailwindcss.com/docs/theme
+================================================= */
+@theme {
+  /* Brand Palette */
+  --color-brand-primary: oklch(0.72 0.21 278);
+  --color-brand-secondary: oklch(0.68 0.18 225);
+  --color-brand-tertiary: oklch(0.74 0.13 160);
+  --color-brand-warm: oklch(0.78 0.16 70);
+  --color-brand-neutral: oklch(0.55 0.04 260);
+
+  /* Light Mode Surfaces */
+  --color-bg-light: oklch(0.98 0.015 255);
+  --color-surface-light: oklch(0.95 0.02 255 / 0.85);
+  --color-glass-light: oklch(0.97 0.015 255 / 0.45);
+  --color-border-light: oklch(0.82 0.035 260 / 0.5);
+  --color-text-light: oklch(0.22 0.045 260);
+  --color-text-subtle-light: oklch(0.38 0.035 260);
+  --color-shadow-light: oklch(0.35 0.04 260 / 0.3);
+
+  /* Dark Mode Surfaces */
+  --color-bg-dark: oklch(0.14 0.02 260);
+  --color-surface-dark: oklch(0.18 0.04 260 / 0.55);
+  --color-glass-dark: oklch(0.22 0.03 260 / 0.3);
+  --color-border-dark: oklch(0.36 0.05 260 / 0.5);
+  --color-text-dark: oklch(0.92 0.015 255);
+  --color-text-subtle-dark: oklch(0.78 0.02 255);
+  --color-shadow-dark: oklch(0.12 0.02 260 / 0.6);
+
+  /* Accent & Glow Tokens */
+  --accent-orange: oklch(0.75 0.18 45);
+  --accent-green: oklch(0.75 0.14 150);
+  --accent-pink: oklch(0.75 0.17 12);
+  --accent-purple: oklch(0.74 0.16 300);
+  --color-accent-glow: oklch(0.88 0.14 260 / 0.55);
+
+  /* Gradient System */
+  --gradient-brand: linear-gradient(135deg, oklch(0.74 0.18 270), oklch(0.76 0.2 310), oklch(0.78 0.22 60));
+  --gradient-warm: linear-gradient(145deg, oklch(0.8 0.23 70), oklch(0.78 0.26 30), oklch(0.72 0.25 10));
+  --gradient-cool: linear-gradient(135deg, oklch(0.78 0.2 220), oklch(0.75 0.18 260), oklch(0.7 0.17 290));
+  --gradient-night: linear-gradient(135deg, oklch(0.28 0.09 260), oklch(0.35 0.1 290), oklch(0.22 0.07 250));
+  --gradient-sunset: linear-gradient(to right, oklch(0.82 0.22 60), oklch(0.8 0.25 30), oklch(0.75 0.23 330));
+  --gradient-skypink: linear-gradient(135deg, oklch(0.82 0.2 230), oklch(0.8 0.23 320), oklch(0.78 0.25 15));
+  --gradient-neon: linear-gradient(to right, oklch(0.84 0.22 190), oklch(0.82 0.24 310), oklch(0.85 0.23 120));
+
+  /* Shadows & Motion */
+  --shadow-soft: 0 10px 30px -10px var(--color-shadow-light);
+  --shadow-neon: 0 0 30px -10px var(--color-accent-glow);
+  --shadow-inset: inset 0 2px 10px var(--color-shadow-light);
+  --motion-duration: 300ms;
+  --motion-ease: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Typography */
+  --font-moon: "Moon Dance";
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-heading: "Poppins", system-ui, sans-serif;
+}
+
+/* =================================================
+   🧱 2. BASE LAYER — Global Resets & Defaults
+   https://tailwindcss.com/docs/layers#base
+================================================= */
+@layer base {
+  body {
+    @apply bg-bg-light font-body text-text-light;
+    @apply transition-colors duration-[var(--motion-duration)] ease-[var(--motion-ease)];
+  }
+
+  .dark body {
+    @apply bg-bg-dark text-text-dark;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-[var(--font-heading)];
+  }
+  h1 {
+    @apply text-4xl font-extrabold tracking-tight md:text-5xl;
+  }
+  p {
+    @apply text-sm leading-relaxed text-[var(--color-text-subtle-light)] md:text-base dark:text-[var(--color-text-subtle-dark)];
+  }
+}
+
+/* =================================================
+   💨 3. UTILITIES — Animations, Hover, Gradients
+   https://tailwindcss.com/docs/layers#utilities
+================================================= */
+@layer utilities {
+  /* ——— Keyframes: Core Motion ——— */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes slide-in {
+    from {
+      opacity: 0;
+      transform: translateX(-25px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes pulse-slow {
+    0%,
+    100% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  /* ——— Keyframes: Float Variants ——— */
+
+  @keyframes float-y {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-14px);
+    }
+  }
+  @keyframes float-rotate {
+    0%,
+    100% {
+      transform: rotate(0deg) translateY(0);
+    }
+    25% {
+      transform: rotate(2deg) translateY(-6px);
+    }
+    75% {
+      transform: rotate(-2deg) translateY(6px);
+    }
+  }
+
+  /* ——— Animation Classes ——— */
+  .animate-fade-in {
+    animation: fade-in 1s ease forwards;
+  }
+  .animate-fade-up {
+    animation: fade-up 1s ease forwards;
+  }
+  .animate-slide-in {
+    animation: slide-in 1s ease forwards;
+  }
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  .animate-spin-slow {
+    animation: spin-slow 80s linear infinite;
+  }
+  .animate-pulse-slow {
+    animation: pulse-slow 6s ease-in-out infinite;
+  }
+  .animate-pulse-slow-delayed {
+    animation: pulse-slow 6s ease-in-out infinite 3s;
+  }
+  .animate-float-y {
+    animation: float-y 8s ease-in-out infinite;
+  }
+  .animate-float-rotate {
+    animation: float-rotate 10s ease-in-out infinite;
+  }
+
+  /* ——— Animation Delay Utilities ——— */
+  .stagger-1 {
+    animation-delay: 0.1s;
+  }
+  .stagger-2 {
+    animation-delay: 0.25s;
+  }
+  .stagger-3 {
+    animation-delay: 0.4s;
+  }
+  .stagger-4 {
+    animation-delay: 0.55s;
+  }
+
+  /* ——— Hover Interactions ——— */
+  .hover-lift {
+    @apply transition-transform duration-[var(--motion-duration)] ease-[var(--motion-ease)] hover:-translate-y-1 hover:scale-[1.02];
+  }
+  .hover-glow {
+    box-shadow: var(--shadow-soft);
+    transition: all 0.4s ease;
+  }
+  .hover-glow:hover {
+    box-shadow: var(--shadow-neon);
+    transform: translateY(-2px) scale(1.02);
+  }
+
+  /* ——— Navigation ——— */
+  .nav-item {
+    @apply text-sm font-medium transition-colors duration-[var(--motion-duration)];
+  }
+  .nav-item:hover {
+    @apply text-[var(--color-brand-primary)] underline;
+  }
+
+  /* Background Gradients */
+  .bg-gradient-brand {
+    @apply bg-[image:var(--gradient-brand)];
+  }
+  .bg-gradient-warm {
+    @apply bg-[image:var(--gradient-warm)];
+  }
+  .bg-gradient-cool {
+    @apply bg-[image:var(--gradient-cool)];
+  }
+  .bg-gradient-night {
+    @apply bg-[image:var(--gradient-night)];
+  }
+  .bg-gradient-sunset {
+    @apply bg-[image:var(--gradient-sunset)];
+  }
+  .bg-gradient-skypink {
+    @apply bg-[image:var(--gradient-skypink)];
+  }
+  .bg-gradient-neon {
+    @apply bg-[image:var(--gradient-neon)];
+  }
+
+  /* Base Text Gradient behavior */
+  .text-gradient {
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Gradient variants */
+  .text-gradient-brand {
+    background-image: var(--gradient-brand);
+  }
+  .text-gradient-warm {
+    background-image: var(--gradient-warm);
+  }
+  .text-gradient-cool {
+    background-image: var(--gradient-cool);
+  }
+  .text-gradient-night {
+    background-image: var(--gradient-night);
+  }
+  .text-gradient-skypink {
+    background-image: var(--gradient-skypink);
+  }
+  .text-gradient-neon {
+    background-image: var(--gradient-neon);
+  }
+
+  /* Sunset w/ drop-shadow */
+  .text-gradient-sunset {
+    background-image: var(--gradient-sunset);
+    @apply drop-shadow-[0_2px_8px_oklch(0.8_0.14_260_/_0.3)];
+  }
+
+  /* Tailwind-generated gradient */
+  .text-gradient-love {
+    @apply bg-[linear-gradient(to_right,var(--tw-gradient-stops))] from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent;
+  }
+
+  /* ——— 3D Tilt Card ——— */
+  .tilt-wrapper {
+    perspective: 1200px;
+  }
+  .tilt-card {
+    transform-style: preserve-3d;
+    transition:
+      transform 0.6s cubic-bezier(0.23, 1, 0.32, 1),
+      box-shadow 0.4s ease;
+    transform-origin: center;
+  }
+  .tilt-card:hover {
+    transform: rotateY(14deg) rotateX(8deg) scale(1.07);
+    box-shadow:
+      0 15px 50px oklch(0.12 0.02 260 / 0.6),
+      inset 0 0 40px oklch(0.88 0.14 260 / 0.15);
+  }
+  .tilt-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(115deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 40%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  .tilt-card:hover::before {
+    opacity: 1;
+  }
+  .tilt-card i {
+    transition: all 0.4s ease;
+  }
+  .tilt-card:hover i {
+    filter: drop-shadow(0 0 12px currentColor);
+    transform: translateZ(20px) scale(1.1);
+  }
+
+  .tilt-wrapper:hover img {
+    filter: drop-shadow(0 0 45px var(--color-accent-glow));
+    transition:
+      box-shadow 0.4s ease,
+      transform 0.4s ease,
+      filter 0.1s ease;
+  }
+
+  /* =========================================================
+   EFFECT CORE (Base fix for all pseudo layers)
+========================================================= */
+
+  .effect-stars,
+  .effect-aurora,
+  .effect-wave,
+  .effect-noise,
+  .effect-particles,
+  .effect-matrix {
+    @apply relative isolate; /* tailwind official recommendation */
+  }
+
+  .effect-stars::before,
+  .effect-aurora::before,
+  .effect-wave::before,
+  .effect-noise::before,
+  .effect-particles::before,
+  .effect-matrix::before {
+    content: "";
+    @apply absolute inset-0 -z-10;
+    mix-blend-mode: normal;
+  }
+
+  /* =========================================================
+   AURORA EFFECT
+========================================================= */
+
+  .effect-aurora::before {
+    @apply opacity-60 blur-3xl;
+
+    background-image:
+      radial-gradient(circle at 30% 20%, oklch(0.78 0.2 270 / 0.25), transparent 70%), radial-gradient(circle at 70% 80%, oklch(0.8 0.18 150 / 0.25), transparent 70%),
+      radial-gradient(circle at 50% 50%, oklch(0.85 0.18 320 / 0.25), transparent 70%);
+
+    animation: aurora-move 14s ease-in-out infinite alternate;
+  }
+
+  @keyframes aurora-move {
+    0%,
+    100% {
+      background-position:
+        20% 30%,
+        70% 80%,
+        50% 50%;
+    }
+    50% {
+      background-position:
+        40% 60%,
+        60% 30%,
+        80% 60%;
+    }
+  }
+
+  /* =========================================================
+   STARS EFFECT
+========================================================= */
+
+  .effect-stars::before {
+    @apply bg-[length:200px_200px] bg-repeat opacity-40;
+
+    background-image:
+      radial-gradient(1px 1px at 10% 20%, white 80%, transparent), radial-gradient(1px 1px at 30% 60%, white 80%, transparent), radial-gradient(1px 1px at 50% 40%, white 80%, transparent),
+      radial-gradient(1px 1px at 70% 80%, white 80%, transparent), radial-gradient(1px 1px at 90% 30%, white 80%, transparent);
+
+    animation: stars-twinkle 12s linear infinite;
+  }
+
+  @keyframes stars-twinkle {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-200px);
+    }
+  }
+
+  /* =========================================================
+   WAVE EFFECT
+========================================================= */
+
+  .effect-wave::before {
+    @apply opacity-60;
+
+    background-image: linear-gradient(135deg, oklch(0.8 0.23 70 / 0.2), oklch(0.8 0.23 270 / 0.2));
+
+    /* Unavoidable raw CSS */
+    mask-image: linear-gradient(to right, transparent 10%, black 50%, transparent 90%);
+
+    animation: wave-flow 16s linear infinite;
+  }
+
+  @keyframes wave-flow {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  /* =========================================================
+   MATRIX EFFECT
+========================================================= */
+
+  .effect-matrix::before {
+    @apply bg-[length:100%_200%] opacity-40;
+
+    background-image: linear-gradient(180deg, transparent, oklch(0.75 0.15 140 / 0.4), transparent);
+
+    animation: matrix-flow 8s linear infinite;
+  }
+
+  @keyframes matrix-flow {
+    0% {
+      background-position: 0 -100%;
+    }
+    100% {
+      background-position: 0 100%;
+    }
+  }
+
+  /* =========================================================
+   PARTICLES EFFECT
+========================================================= */
+
+  .effect-particles::before {
+    @apply opacity-40 blur-[100px];
+
+    background-image: radial-gradient(circle at 20% 30%, oklch(0.9 0.18 280 / 0.15), transparent 70%), radial-gradient(circle at 70% 70%, oklch(0.85 0.2 100 / 0.1), transparent 70%);
+
+    animation: particle-glow 10s ease-in-out infinite alternate;
+  }
+
+  @keyframes particle-glow {
+    0% {
+      background-position:
+        20% 30%,
+        70% 70%;
+    }
+    100% {
+      background-position:
+        30% 50%,
+        60% 60%;
+    }
+  }
+
+  /* =========================================================
+   NOISE EFFECT (minimal raw CSS)
+========================================================= */
+
+  .effect-noise::before {
+    @apply opacity-[0.05];
+    background-image: url("https://www.transparenttextures.com/patterns/noise.png");
+    mix-blend-mode: overlay;
+  }
+
+  /* =========================================================
+   REVEAL ANIMATIONS — Tailwind v4 Optimized
+========================================================= */
+
+  @keyframes reveal-up {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes reveal-down {
+    from {
+      opacity: 0;
+      transform: translateY(-40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes reveal-left {
+    from {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes reveal-right {
+    from {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes reveal-diagonal {
+    from {
+      opacity: 0;
+      transform: translate(40px, 40px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+  }
+  @keyframes reveal-zoom {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  @keyframes reveal-blur {
+    from {
+      opacity: 0;
+      filter: blur(12px);
+    }
+    to {
+      opacity: 1;
+      filter: blur(0);
+    }
+  }
+
+  @keyframes reveal-drop {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px) scale(1.05);
+      filter: blur(8px);
+    }
+    80% {
+      opacity: 1;
+      transform: translateY(4px) scale(0.98);
+      filter: blur(0);
+    }
+    100% {
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes reveal-fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes reveal-fade-scale {
+    from {
+      opacity: 0;
+      transform: scale(1.1);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes reveal-float {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    60% {
+      opacity: 1;
+      transform: translateY(-5px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes reveal-bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-20px);
+    }
+    60% {
+      transform: translateY(-8px);
+    }
+  }
+
+  /* =========================================================
+   REVEAL UTILITY CLASSES
+========================================================= */
+
+  .reveal-up {
+    animation: reveal-up 1.2s var(--motion-ease) both;
+  }
+  .reveal-down {
+    animation: reveal-down 1.2s var(--motion-ease) both;
+  }
+  .reveal-left {
+    animation: reveal-left 1.2s var(--motion-ease) both;
+  }
+  .reveal-right {
+    animation: reveal-right 1.2s var(--motion-ease) both;
+  }
+  .reveal-diagonal {
+    animation: reveal-diagonal 1.3s var(--motion-ease) both;
+  }
+  .reveal-zoom {
+    animation: reveal-zoom 1.1s var(--motion-ease) both;
+  }
+  .reveal-blur {
+    animation: reveal-blur 1s ease-out both;
+  }
+
+  .reveal-drop {
+    animation: reveal-drop 1.2s ease-out both;
+  }
+
+  .reveal-fade {
+    animation: reveal-fade 1s ease-in-out both;
+  }
+  .reveal-fade-scale {
+    animation: reveal-fade-scale 1.1s ease-in-out both;
+  }
+
+  .reveal-float {
+    animation: reveal-float 1.3s ease-out both;
+  }
+  .reveal-bounce {
+    animation: reveal-bounce 1.2s ease both;
+  }
+
+  /* Prevent flash of unanimated element */
+  [class*="reveal-"] {
+    @apply opacity-0;
+    animation-fill-mode: both;
+    will-change: transform, opacity;
+  }
+
+  /* ——— Misc Utilities ——— */
+  .eclipse-btn-primary {
+    @apply inline-flex items-center gap-2 rounded-full bg-linear-to-r from-sky-500 via-fuchsia-500 to-purple-500 px-8 py-4 font-semibold text-white shadow-[0_0_50px_oklch(0.78_0.18_280_/_0.4)] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.06] hover:shadow-[0_0_80px_oklch(0.82_0.22_280_/_0.5)];
+  }
+
+  .eclipse-btn-secondary {
+    @apply inline-flex items-center gap-2 rounded-full border border-border-light px-8 py-4 font-medium text-text-light backdrop-blur-lg transition-all duration-500 ease-in-out hover:scale-[1.03] hover:bg-[oklch(0.97_0.015_255_/_0.7)] dark:border-border-dark dark:text-text-dark dark:hover:bg-[oklch(0.18_0.04_260_/_0.5)];
+  }
+
+  .lumin-social {
+    @apply relative text-text-subtle-light transition-all duration-500 hover:scale-125 dark:text-text-subtle-dark;
+  }
+  .parallax-card {
+    perspective: 1200px;
+    transform-style: preserve-3d;
+    transition: transform 0.4s ease;
+  }
+  .scroll-rotate {
+    transform: rotateY(var(--scroll-rotate, 0deg));
+    transition: transform 0.1s linear;
+  }
+
+  .star-rating {
+    @apply flex justify-center gap-0.5 text-amber-400;
+  }
+  .star-rating i {
+    @apply transition-all duration-300;
+  }
+  .star-rating:hover i {
+    @apply scale-110;
+  }
+}
+
+/* =================================================
+   🧩 4. COMPONENTS — Reusable UI Blocks
+   https://tailwindcss.com/docs/layers#components
+================================================= */
+@layer components {
+  /* ——— Glass & Stat Cards ——— */
+  .glass-card {
+    @apply rounded-xl border border-[var(--color-border-light)] bg-[var(--color-glass-light)] p-6 shadow-[var(--shadow-soft)] backdrop-blur-md transition-transform duration-[var(--motion-duration)] ease-[var(--motion-ease)] hover:scale-[1.02] dark:border-[var(--color-border-dark)] dark:bg-[var(--color-glass-dark)];
+  }
+
+  .stat-card {
+    @apply rounded-xl bg-white/25 p-6 text-(--gradient-love) shadow-lg backdrop-blur-sm transition-transform duration-300 hover:scale-105 dark:bg-gray-800/30;
+  }
+  
+  .stat-number {
+    @apply bg-clip-text text-[4rem] font-black text-transparent drop-shadow-[0_0_12px_oklch(0.85_0.12_280_/_0.4)] transition-all duration-400;
+    background-image: var(--gradient-neon);
+  }
+  .stat-label {
+    @apply mt-2 bg-clip-text text-[1.1rem] font-semibold text-transparent;
+    background-image: var(--gradient-skypink);
+  }
+  .stat-magnetic {
+    @apply relative transition-transform duration-200 ease-out;
+  }
+  .stat-card-inner {
+    @apply transition-transform duration-200;
+  }
+
+  /* Ensure 3D context is preserved */
+  .stat-magnetic {
+    transform-style: preserve-3d;
+  }
+  .stat-card-inner {
+    transform: translateZ(40px);
+  }
+
+  /* ——— Aurora Card ——— */
+  .card-aurora {
+    position: relative;
+  }
+  .card-aurora::before {
+    content: "";
+    @apply absolute inset-0 rounded-xl opacity-0 transition-opacity duration-700;
+    background: radial-gradient(circle at 50% 20%, oklch(0.8 0.15 280 / 0.18), transparent 70%);
+  }
+  .card-aurora:hover::before {
+    @apply opacity-100;
+  }
+
+  /* ——————————————————————————————
+   PRISM CARD — Light + Dark + Animations
+—————————————————————————————— */
+
+  /* 1) Base Glass Card */
+  .prism-card {
+    @apply relative flex h-[340px] w-[300px] flex-col items-center justify-center rounded-3xl border border-[var(--color-border-light)] bg-[var(--color-glass-light)] px-6 text-center backdrop-blur-2xl transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] dark:border-[var(--color-border-dark)] dark:bg-[var(--color-glass-dark)];
+
+    /* Dual surface glow */
+    box-shadow: 0 0 40px -10px var(--color-shadow-light);
+  }
+  .prism-card:hover {
+    transform: translateY(-12px) rotateY(4deg);
+    box-shadow: 0 0 80px -10px var(--color-accent-glow);
+
+    /* Slight color shift for futurism */
+    filter: hue-rotate(8deg) brightness(1.05);
+  }
+
+  /* 2) Light Reflection Layer */
+  .prism-light::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 1.5rem;
+    background: linear-gradient(115deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 50%);
+    opacity: 0;
+    transition: opacity 0.55s ease;
+  }
+  .group:hover .prism-light::before {
+    opacity: 1;
+  }
+
+  /* 3) Sweep Animation (V2 feature) */
+  @keyframes sweep {
+    0% {
+      transform: translateX(-120%);
+      opacity: 0;
+    }
+    30% {
+      opacity: 1;
+    }
+    70% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(120%);
+      opacity: 0;
+    }
+  }
+
+  .before\:animate-sweep::before {
+    animation: sweep 6s linear infinite;
+  }
+  .before\:animate-sweep-delayed::before {
+    animation: sweep 6s linear infinite 3s;
+  }
+
+  .group:hover .group-hover\:rotate-y-4 {
+    transform: rotateY(4deg);
+  }
+  .group:hover .group-hover\:-rotate-y-4 {
+    transform: rotateY(-4deg);
+  }
+
+  /* 4) Accent Glow Ring */
+  .prism-glow {
+    @apply absolute -z-10 h-64 w-64 rounded-full;
+  }
+  /* Divider Line */
+  .divider {
+    @apply mt-6 h-[1px] w-3/4 bg-gradient-to-r from-sky-400 via-fuchsia-400 to-transparent opacity-60;
+  }
+
+  /* Subtle hue rotation */
+  .group:hover .prism-card {
+    filter: hue-rotate(8deg) brightness(1.05);
+  }
+  /* -------------------------------
+     📦 Chrono Card — Base Wrapper
+  -------------------------------- */
+  .chrono-card {
+    /* Layout */
+    @apply relative isolate cursor-pointer overflow-hidden rounded-3xl;
+
+    /* Theme-aware surfaces */
+    @apply border border-[var(--color-border-light)] bg-[var(--color-surface-light)] dark:border-[var(--color-border-dark)] dark:bg-[var(--color-surface-dark)];
+
+    /* Motion */
+    @apply backdrop-blur-[20px] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)];
+  }
+
+  .chrono-card:hover {
+    /* Transform */
+    @apply -translate-y-2 scale-[1.02];
+
+    /* Glow border */
+    @apply border-[var(--accent-purple)];
+
+    /* Shadow using token */
+    @apply shadow-[var(--shadow-neon)];
+  }
+
+  /* -------------------------------------
+     💫 Background Glow Blob
+  -------------------------------------- */
+  .chrono-bg {
+    @apply absolute inset-0 -z-10 animate-[pulse-slow_10s_ease-in-out_infinite_alternate] rounded-3xl blur-[100px];
+
+    @apply bg-[var(--gradient-cool)];
+  }
+
+  /* -------------------------------------
+     🌌 Card Glow (On Hover)
+  -------------------------------------- */
+  .chrono-glow {
+    @apply absolute inset-0 opacity-0 transition-opacity duration-700;
+
+    @apply bg-[radial-gradient(circle_at_50%_40%,var(--color-accent-glow),transparent_70%)];
+  }
+
+  .chrono-card:hover .chrono-glow {
+    @apply opacity-100;
+  }
+
+  /* -------------------------------------
+     ✨ Light Sweep Effect
+  -------------------------------------- */
+  .chrono-light::before {
+    content: "";
+    @apply absolute inset-0 -translate-x-full rounded-3xl transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)];
+
+    @apply bg-[linear-gradient(115deg,rgba(255,255,255,0.12)_0%,transparent_50%)];
+  }
+
+  .chrono-card:hover .chrono-light::before {
+    @apply translate-x-full;
+  }
+
+  /* -------------------------------------
+     🖼️ Image
+  -------------------------------------- */
+  .chrono-image {
+    @apply h-52 w-full object-cover opacity-90 transition duration-700 ease-out;
+  }
+
+  .chrono-card:hover .chrono-image {
+    @apply scale-105 opacity-100;
+  }
+
+  /* -------------------------------------
+     📑 Content
+  -------------------------------------- */
+  .chrono-info {
+    @apply p-6 text-left;
+  }
+
+  .chrono-info h3 {
+    @apply text-xl font-semibold transition duration-500;
+
+    @apply bg-(image:--gradient-brand) bg-clip-text text-transparent;
+  }
+
+  .chrono-card:hover h3 {
+    @apply drop-shadow-[0_0_10px_var(--color-accent-glow)];
+  }
+
+  .chrono-info p {
+    @apply mt-2 text-sm text-[var(--color-text-subtle-light)] dark:text-[var(--color-text-subtle-dark)];
+  }
+
+  /* -------------------------------------
+     🔖 Tags
+  -------------------------------------- */
+  .chrono-tags {
+    @apply mt-4 flex flex-wrap gap-1.5;
+  }
+
+  .chrono-tags span {
+    @apply rounded-full px-3 py-1 text-[0.75rem] transition-colors duration-300;
+
+    /* Theme-aware */
+    @apply border border-[var(--color-border-light)] bg-[var(--color-surface-light)] text-[var(--color-text-light)];
+
+    @apply dark:border-[var(--color-border-dark)] dark:bg-[var(--color-surface-dark)] dark:text-[var(--color-text-dark)];
+  }
+
+  .chrono-tags span:hover {
+    @apply bg-[var(--accent-purple)/0.2] dark:bg-[var(--accent-purple)/0.25];
+  }
+
+  /* ——— Layout & Sections ——— */
+  .section {
+    @apply relative overflow-hidden bg-[var(--color-bg-light)] py-24 transition-colors duration-[var(--motion-duration)] ease-[var(--motion-ease)] dark:bg-[var(--color-bg-dark)];
+  }
+  .section-container {
+    @apply container mx-auto px-6 sm:px-8 lg:px-12 xl:max-w-7xl;
+  }
+  .section-content {
+    @apply mt-12 grid gap-8;
+  }
+  .section-heading {
+    @apply mb-10 text-center text-4xl font-bold tracking-tight;
+  }
+  .section-sub-heading {
+    @apply mb-10 text-center text-3xl font-semibold tracking-tight;
+  }
+  .section-subtext {
+    @apply mx-auto mb-10 max-w-2xl text-base text-text-light dark:text-text-dark;
+  }
+  .subtitle {
+    @apply text-lg leading-relaxed text-text-light dark:text-text-dark;
+  }
+  .heading {
+    @apply mb-4 text-2xl font-semibold tracking-tight;
+  }
+
+  .layout {
+    @apply flex flex-col gap-12 lg:flex-row lg:items-center lg:gap-20;
+  }
+  .intro {
+    @apply space-y-6 lg:w-5/12;
+  }
+  .card-container {
+    @apply relative grid grid-cols-1 gap-6 md:grid-cols-2 lg:w-7/12;
+  }
+
+  /* ——— Feature Cards ——— */
+
+  .feature-card {
+    /* Layout & Surface */
+    @apply relative z-10 rounded-2xl p-8 text-left backdrop-blur-sm;
+    @apply border border-[var(--color-border-light)] bg-[var(--color-glass-light)];
+    @apply dark:border-[var(--color-border-dark)] dark:bg-[var(--color-glass-dark)] dark:text-text-dark;
+
+    /* Motion (Performance friendly + official classes only) */
+    @apply transition-colors transition-shadow transition-transform;
+    @apply duration-[var(--motion-duration)] ease-[var(--motion-ease)];
+    @apply transform-gpu; /* Tailwind official GPU optimization */
+
+    /* Hover State — Light */
+    @apply hover:-translate-y-2 hover:shadow-xl;
+    @apply hover:border-[color:var(--color-brand-primary)];
+    @apply hover:bg-[color-mix(in_oklab,var(--color-brand-primary)_10%,transparent)];
+
+    /* Hover State — Dark */
+    @apply dark:hover:border-brand-secondary;
+    @apply dark:hover:bg-[color-mix(in_oklab,var(--color-brand-secondary)_12%,transparent)];
+  }
+
+  /* ——— Icons——— */
+  .icon {
+    @apply mb-6 inline-flex size-12 items-center justify-center rounded-xl bg-[linear-gradient(to_br,orange-100,orange-300)] text-2xl dark:bg-[linear-gradient(to_br,orange-900,orange-700)];
+  }
+
+  .group:hover .icon {
+    @apply scale-150 transition-transform duration-700;
+  }
+}
